@@ -1,0 +1,38 @@
+
+<!-- mvn build commands for SHIRES  -->
+    
+<project name="shires-mvn-build" basedir="." default="mvn">
+	
+    <property name="jboss-deploy-location" value="/opt/shires/cots/jboss-5.1.0.GA/server/all.shires/deploy"/>
+    
+	<target name="mvn">
+        <exec executable="cmd" failonerror="true">
+            <arg value="/c mvn -Dmaven.test.skip=true" />        	
+        </exec>
+    </target>
+
+    <target name="jsp-only">
+        <exec executable="cmd" failonerror="true">
+            <arg value="/c mvn -f jsp-only/pom.xml" />
+        </exec>
+    </target>
+
+    <target name="webtier-only">
+        <exec executable="cmd" failonerror="true">
+            <arg value="/c mvn -pl core,domain,service-mvc,mvc,war" />
+        </exec>
+    </target>
+
+    <target name="clean">
+        <exec executable="cmd" failonerror="true">
+            <arg value="/c mvn clean" />
+        </exec>
+    </target>
+
+    <target name="artifact-deployer">
+        <exec executable="cmd" failonerror="true">
+            <arg value="/c mvn -f artifact-deployer/pom.xml" />
+        </exec>
+    </target>
+	
+</project>

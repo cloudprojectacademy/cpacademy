@@ -1,0 +1,87 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <!--
+        never change here for your local settings, properties can be overrided
+        in settings.xml
+    -->
+    <properties>
+        <artifact.id>${cpacademy.mvc.artifact.id}</artifact.id>
+        <source.dir>../../mvc/src/main/java</source.dir>
+        <test.source.dir>../../mvc/src/test/java</test.source.dir>
+    </properties>
+
+    <parent>
+        <groupId>${cpacademy.group.id}</groupId>
+        <artifactId>${cpacademy.parent.artifact.id}</artifactId>
+        <version>${cpacademy.version}</version>
+        <relativePath>../common/pom.xml</relativePath>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>${artifact.id}</artifactId>
+    <name>CPACADEMY-MVC</name>
+    <description>Jar file that contains CPACADEMY MVC code</description>
+    <packaging>jar</packaging>
+    
+    
+    <dependencies>
+        <dependency>
+            <groupId>${cpacademy.group.id}</groupId>
+            <artifactId>${cpacademy.core.artifact.id}</artifactId>
+            <version>${cpacademy.version}</version>
+            <type>jar</type>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>${cpacademy.group.id}</groupId>
+            <artifactId>${cpacademy.domain.artifact.id}</artifactId>
+            <version>${cpacademy.version}</version>
+            <type>jar</type>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>${cpacademy.group.id}</groupId>
+            <artifactId>${cpacademy.service-mvc.artifact.id}</artifactId>
+            <version>${cpacademy.version}</version>
+            <type>jar</type>
+            <scope>provided</scope>
+        </dependency>        
+        
+    </dependencies>    
+
+    <build>
+        
+        <testSourceDirectory>${test.source.dir}</testSourceDirectory>
+
+        <testResources>
+            <testResource>
+                <directory>${test.resources.dir}</directory>
+            </testResource>
+        </testResources>
+        
+        <plugins>
+
+            <!-- after verification is successful, now we can compile -->
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+
+            <!-- create an INDEX.LIST of packages in the jar META-INF -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <index>true</index>
+                    </archive>
+                </configuration>
+            </plugin>
+
+        </plugins>
+
+    </build>
+
+</project>

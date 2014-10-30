@@ -1,0 +1,179 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<!-- never change here for your local settings, properties can be overrided 
+		in settings.xml -->
+	<properties>
+		<artifact.id>${cpacademy.ear.artifact.id}</artifact.id>
+		<cpacademy.ear.file.name>${cpacademy.ear.artifact.id}.ear</cpacademy.ear.file.name>
+		<cpacademy.ear.deploy.location>${cpacademy.jboss.deploy.location}/deploy</cpacademy.ear.deploy.location>
+	</properties>
+
+	<parent>
+		<groupId>${cpacademy.group.id}</groupId>
+		<artifactId>${cpacademy.parent.artifact.id}</artifactId>
+		<version>${cpacademy.version}</version>
+		<relativePath>../common/pom.xml</relativePath>
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>${artifact.id}</artifactId>
+	<name>CPACADEMY-EAR</name>
+
+	<packaging>ear</packaging>
+
+	<dependencies>
+
+		<!-- All modules here are included into the ear -->
+
+		<dependency>
+			<groupId>${cpacademy.group.id}</groupId>
+			<artifactId>${cpacademy.persistence.artifact.id}</artifactId>
+			<version>${cpacademy.version}</version>
+			<type>ejb</type>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>${cpacademy.group.id}</groupId>
+			<artifactId>${cpacademy.core.artifact.id}</artifactId>
+			<version>${cpacademy.version}</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>${cpacademy.group.id}</groupId>
+			<artifactId>${cpacademy.domain.artifact.id}</artifactId>
+			<version>${cpacademy.version}</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>${cpacademy.group.id}</groupId>
+			<artifactId>${cpacademy.service.artifact.id}</artifactId>
+			<version>${cpacademy.version}</version>
+			<type>ejb</type>
+			<scope>compile</scope>
+		</dependency>
+ 
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>compile</scope>			
+		</dependency>
+
+	</dependencies>
+
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-ear-plugin</artifactId>
+
+				<configuration>
+					<finalName>${cpacademy.ear.artifact.id}</finalName>
+					<includeLibInApplicationXml>true</includeLibInApplicationXml>
+					<version>1.3</version>
+					<modules>
+						<ejbModule>
+							<groupId>${cpacademy.group.id}</groupId>
+							<artifactId>${cpacademy.persistence.artifact.id}</artifactId>
+							<bundleFileName>${cpacademy.persistence.artifact.id}-${cpacademy.version}.jar</bundleFileName>
+						</ejbModule>
+
+						<jarModule>
+							<groupId>${cpacademy.group.id}</groupId>
+							<artifactId>${cpacademy.core.artifact.id}</artifactId>
+							<bundleFileName>${cpacademy.core.artifact.id}-${cpacademy.version}.jar</bundleFileName>
+							<includeInApplicationXml>true</includeInApplicationXml>
+						</jarModule>
+
+						<jarModule>
+							<groupId>${cpacademy.group.id}</groupId>
+							<artifactId>${cpacademy.domain.artifact.id}</artifactId>
+							<bundleFileName>${cpacademy.domain.artifact.id}-${cpacademy.version}.jar</bundleFileName>
+							<includeInApplicationXml>true</includeInApplicationXml>
+						</jarModule>
+
+						<ejbModule>
+							<groupId>${cpacademy.group.id}</groupId>
+							<artifactId>${cpacademy.service.artifact.id}</artifactId>
+							<bundleFileName>${cpacademy.service.artifact.id}-${cpacademy.version}.jar</bundleFileName>
+						</ejbModule>
+
+					</modules>
+				</configuration>
+
+				<executions>
+					<execution>
+						<id>default-generate-application-xml</id>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>generate-application-xml</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>default-ear</id>
+						<phase>package</phase>
+						<goals>
+							<goal>ear</goal>
+						</goals>
+					</execution>
+				</executions>
+
+			</plugin>
+
+
+		</plugins>
+
+	</build>
+
+
+	<profiles>
+		<!-- development profile copies the ear to jboss deploy directory, also 
+			cleans ear on mvn clean -->
+		<profile>
+			<id>profile-dev</id>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>copy-ear</id>
+								<phase>install</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<tasks>
+										<copy file="target/${cpacademy.ear.file.name}"
+											tofile="${cpacademy.ear.deploy.location}/${cpacademy.ear.file.name}" />
+									</tasks>
+								</configuration>
+							</execution>
+							<execution>
+								<id>delete-all-ears</id>
+								<phase>clean</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<tasks>
+										<delete failonerror="false">
+											<fileset dir="${cpacademy.ear.deploy.location}" includes="*.ear" />
+										</delete>
+									</tasks>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+
+</project>

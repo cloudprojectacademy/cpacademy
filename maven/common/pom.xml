@@ -1,0 +1,624 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	
+	<properties>
+
+		<!-- all artifact ids -->
+		<cpacademy.parent.artifact.id>cpacademy-common</cpacademy.parent.artifact.id>
+		<cpacademy.core.artifact.id>cpacademy-core</cpacademy.core.artifact.id>
+		<cpacademy.domain.artifact.id>cpacademy-domain</cpacademy.domain.artifact.id>
+		<cpacademy.mvc.artifact.id>cpacademy-mvc</cpacademy.mvc.artifact.id>
+		<cpacademy.persistence.artifact.id>cpacademy-persistence</cpacademy.persistence.artifact.id>
+		<cpacademy.service.artifact.id>cpacademy-service</cpacademy.service.artifact.id>
+		<cpacademy.service-mvc.artifact.id>cpacademy-service-mvc</cpacademy.service-mvc.artifact.id>
+		<cpacademy.ear.artifact.id>cpacademy</cpacademy.ear.artifact.id>
+		<cpacademy.war.artifact.id>mvc</cpacademy.war.artifact.id>
+
+		<html.dir>../../mvc/src/main/webapp</html.dir>
+
+		<!-- global source code directory -->
+		<source.dir></source.dir>
+		<cpacademy.jboss.deploy.location>/opt/cpacademy/cots/jboss/server/all.cpacademy</cpacademy.jboss.deploy.location>
+
+		<!-- Prevents concurrent builds on same machine by creating temporary file 
+			lock file created for each pom.xml during the validate phase and deleting 
+			the temporary file during the install phase. This file name is hardcoded 
+			in apptier-jar/verifications.xml, please synchronize -->
+		<cpacademy.build.lock.file>/tmp/maven.lck</cpacademy.build.lock.file>
+
+		<maven.test.skip>true</maven.test.skip>
+
+	</properties>
+
+	<parent>
+		<groupId>${cpacademy.group.id}</groupId>
+		<artifactId>${cpacademy.top.artifact.id}</artifactId>
+		<version>${cpacademy.version}</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>${cpacademy.group.id}</groupId>
+	<artifactId>${cpacademy.parent.artifact.id}</artifactId>
+	<packaging>pom</packaging>
+	<version>${cpacademy.version}</version>
+	<name>CPACADEMY-COMMON</name>
+
+	<!-- Dependency management declares version numbers and scope, you must 
+		still declare them in dependencies section if you want to use them. All dependencies 
+		here are of scope "provided" for compilation only, scope needs to be changed 
+		to "compile" if you want to include them in wars, ears, and jars -->
+	<dependencyManagement>
+
+		<dependencies>
+
+			<!-- Spring Jars starts here -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-aop</artifactId>
+				<version>4.0.5.RELEASE</version>
+				<type>jar</type>
+				<scope>provided</scope>
+				<exclusions>
+					<exclusion>
+						<groupId>org.springframework</groupId>
+						<artifactId>spring-asm</artifactId>
+					</exclusion>
+				</exclusions>				
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-aspects</artifactId>
+				<version>4.0.5.RELEASE</version>
+				<type>jar</type>
+				<scope>provided</scope>
+				<exclusions>
+					<exclusion>
+						<groupId>org.springframework</groupId>
+						<artifactId>spring-asm</artifactId>
+					</exclusion>
+				</exclusions>				
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-beans</artifactId>
+				<version>4.0.5.RELEASE</version>
+				<type>jar</type>
+				<scope>provided</scope>
+				<exclusions>
+					<exclusion>
+						<groupId>org.springframework</groupId>
+						<artifactId>spring-asm</artifactId>
+					</exclusion>
+				</exclusions>				
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-support</artifactId>
+				<version>2.0.8</version>
+				<type>jar</type>
+				<scope>provided</scope>
+				<exclusions>
+					<exclusion>
+						<groupId>org.springframework</groupId>
+						<artifactId>spring-asm</artifactId>
+					</exclusion>
+				</exclusions>				
+			</dependency>			
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>4.0.5.RELEASE</version>
+				<type>jar</type>
+				<scope>provided</scope>
+				<exclusions>
+					<exclusion>
+						<groupId>org.springframework</groupId>
+						<artifactId>spring-asm</artifactId>
+					</exclusion>
+				</exclusions>				
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>4.0.5.RELEASE</version>
+				<type>jar</type>
+				<scope>provided</scope>
+				<exclusions>
+					<exclusion>
+						<groupId>org.springframework</groupId>
+						<artifactId>spring-asm</artifactId>
+					</exclusion>
+				</exclusions>				
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-instrument</artifactId>
+				<version>4.0.5.RELEASE</version>
+				<type>jar</type>
+				<scope>provided</scope>
+				<exclusions>
+					<exclusion>
+						<groupId>org.springframework</groupId>
+						<artifactId>spring-asm</artifactId>
+					</exclusion>
+				</exclusions>				
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-test</artifactId>
+				<version>4.0.5.RELEASE</version>
+				<type>jar</type>
+				<scope>provided</scope>
+				<exclusions>
+					<exclusion>
+						<groupId>org.springframework</groupId>
+						<artifactId>spring-asm</artifactId>
+					</exclusion>
+				</exclusions>				
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>4.0.5.RELEASE</version>
+				<type>jar</type>
+				<scope>provided</scope>
+				<exclusions>
+					<exclusion>
+						<groupId>org.springframework</groupId>
+						<artifactId>spring-asm</artifactId>
+					</exclusion>
+				</exclusions>				
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-expression</artifactId>
+				<version>4.0.5.RELEASE</version>
+				<type>jar</type>
+				<scope>provided</scope>
+				<exclusions>
+					<exclusion>
+						<groupId>org.springframework</groupId>
+						<artifactId>spring-asm</artifactId>
+					</exclusion>
+				</exclusions>				
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-webmvc</artifactId>
+				<version>4.0.5.RELEASE</version>
+				<type>jar</type>
+				<scope>provided</scope>		
+				<exclusions>
+					<exclusion>
+						<groupId>org.springframework</groupId>
+						<artifactId>spring-asm</artifactId>
+					</exclusion>
+				</exclusions>				
+			</dependency>				
+			<dependency>
+				<groupId>commons-fileupload</groupId>
+				<artifactId>commons-fileupload</artifactId>
+				<version>1.3.1</version>
+				<type>jar</type>
+				<scope>provided</scope>		
+			</dependency>				
+			
+			<!-- Spring Jars ends here -->
+
+			<!-- Hibernate Jars starts here -->
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-core</artifactId>
+				<version>4.3.5.Final</version>
+				<type>jar</type>				
+				<scope>provided</scope>
+				<exclusions>
+					<exclusion>
+						<groupId>dom4j</groupId>
+						<artifactId>dom4j</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-annotations</artifactId>
+				<version>3.5.6-Final</version>
+				<type>jar</type>				
+				<scope>provided</scope>
+				<exclusions>
+					<exclusion>
+						<groupId>dom4j</groupId>
+						<artifactId>dom4j</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-entitymanager</artifactId>
+				<version>4.3.5.Final</version>
+				<type>jar</type>				
+				<scope>provided</scope>
+				<exclusions>
+					<exclusion>
+						<groupId>dom4j</groupId>
+						<artifactId>dom4j</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-validator</artifactId>
+				<version>5.1.1.Final</version>
+				<type>jar</type>				
+				<scope>provided</scope>
+				<exclusions>
+					<exclusion>
+						<groupId>dom4j</groupId>
+						<artifactId>dom4j</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<!-- Hibernate Jars ends here -->
+
+			<!-- slf4j/Log4j starts here -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>1.7.7</version>
+				<type>jar</type>				
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-log4j13</artifactId>
+				<version>1.0.1</version>
+				<type>jar</type>				
+				<scope>provided</scope>				
+			</dependency>
+			<!-- slf4j/Log4j ends here -->
+			
+			<!-- JSTL starts here -->
+			<dependency>
+				<groupId>jstl</groupId>
+				<artifactId>jstl</artifactId>
+				<version>1.2</version>
+				<type>jar</type>
+				<scope>provided</scope>
+			</dependency>
+			<!-- JSTL ends here -->
+			
+			<!-- MySQL Driver -->
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>5.0.8</version>			
+				<type>jar</type>
+				<scope>provided</scope>
+			</dependency>
+			
+
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+                        
+		<!-- SPRING Jars starts here -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-aop</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-aspects</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-beans</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-support</artifactId>
+			</dependency>				
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-instrument</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-test</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-expression</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-webmvc</artifactId>
+			</dependency>			
+			<dependency>
+				<groupId>commons-fileupload</groupId>
+				<artifactId>commons-fileupload</artifactId>
+			</dependency>				
+
+			<!-- Hibernate Jars -->
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-core</artifactId>
+			</dependency>
+
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-annotations</artifactId>
+			</dependency>
+
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-entitymanager</artifactId>
+			</dependency>
+
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-validator</artifactId>
+			</dependency>
+
+			<!-- slf4j/Log4j starts here -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-log4j13</artifactId>
+			</dependency>
+			<!-- slf4j/Log4j ends here -->
+			
+			<!-- JSTL starts here -->
+			<dependency>
+				<groupId>jstl</groupId>
+				<artifactId>jstl</artifactId>
+			</dependency>
+			<!-- JSTL ends here -->
+			
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+			</dependency>
+			
+
+	</dependencies>
+
+
+	<!-- project build order, don't change the order! -->
+	<modules>
+		<!-- create the cpacademy util common classes jar -->
+		<module>../core</module>
+		<module>../domain</module>
+		<module>../persistence</module>
+		<module>../service</module>
+		<module>../service-mvc</module>
+		<module>../ear</module>
+		<module>../mvc</module>
+		<module>../war</module>
+	</modules>
+
+
+	<build>
+
+		<!-- output file name same as artifact id -->
+		<finalName>${artifact.id}</finalName>
+
+		<!-- default goal for all children -->
+		<defaultGoal>install</defaultGoal>
+
+		<!-- global source code directory, compiler will always compile classes 
+			in here unless the sourceDirectory is changed in children poms -->
+		<sourceDirectory>${source.dir}</sourceDirectory>
+
+		<!-- common versions of plugins are declared here -->
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>2.1</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-ear-plugin</artifactId>
+					<version>2.3.2</version>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>jboss-packaging-maven-plugin</artifactId>
+					<version>2.1.1</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-assembly-plugin</artifactId>
+					<version>2.2-beta-5</version>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>build-helper-maven-plugin</artifactId>
+					<version>1.3</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>2.0</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.6</version>
+					<configuration>
+						<parallel>methods</parallel>
+						<threadCount>10</threadCount>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>net.alchim31.maven</groupId>
+					<artifactId>yuicompressor-maven-plugin</artifactId>
+					<version>1.1</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.codehaus.groovy.maven</groupId>
+					<artifactId>gmaven-plugin</artifactId>
+					<version>1.0-rc-5</version>
+				</plugin>
+
+			</plugins>
+		</pluginManagement>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+					<fork>true</fork>
+					<showWarnings>false</showWarnings>
+					<showDeprecation>false</showDeprecation>
+					<meminitial>128m</meminitial>
+					<maxmem>512m</maxmem>
+					<encoding>ISO-8859-1</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+
+
+	</build>
+
+	<!-- Profiles allows us to run specific plugins and settings in dev build and qa-prod build. "profile-dev" is active by default. The "active profile" 
+		can be overrided in settings.xml, properties can also be overrided in settings.xml. -->
+	<profiles>
+
+		<profile>
+			<id>profile-dev</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+
+			<build>
+				<plugins>
+
+					<!-- checks the ${cpacademy.build.lock.file} exists before compiling, will 
+						error if lock is found. -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-verifier-plugin</artifactId>
+						<version>1.0</version>
+						<configuration>
+							<verificationFile>../common/verifications.xml</verificationFile>
+						</configuration>
+						<executions>
+							<execution>
+								<id>verify-lock</id>
+								<phase>validate</phase>
+								<goals>
+									<goal>verify</goal>
+								</goals>
+							</execution>
+							<execution>
+								<id>verify-cean-lock</id>
+								<phase>pre-clean</phase>
+								<goals>
+									<goal>verify</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+
+					<!-- creates a lock file after verification is successful -->
+					<plugin>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>create-lock</id>
+								<phase>validate</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<tasks>
+										<echo>Creating lock file...</echo>
+										<touch mkdirs="true" file="${cpacademy.build.lock.file}" />
+									</tasks>
+								</configuration>
+							</execution>
+							<execution>
+								<id>create-preclean-lock</id>
+								<phase>pre-clean</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<tasks>
+										<echo>Creating lock file...</echo>
+										<touch mkdirs="true" file="${cpacademy.build.lock.file}" />
+									</tasks>
+								</configuration>
+							</execution>
+							<execution>
+								<id>delete-lock</id>
+								<phase>install</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<tasks>
+										<echo>Deleting lock file...</echo>
+										<delete file="${cpacademy.build.lock.file}" />
+									</tasks>
+								</configuration>
+							</execution>
+							<execution>
+								<id>delete-postclean-lock</id>
+								<phase>clean</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<tasks>
+										<echo>Deleting lock file...</echo>
+										<delete file="${cpacademy.build.lock.file}" />
+									</tasks>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+
+			</build>
+		</profile>
+
+		<!-- qa/production builds everything -->
+		<profile>
+			<id>profile-qa-prod</id>
+			<modules>
+
+				<!-- Creates the zip file for qa and production deploy. -->
+				<module>../packager</module>
+			</modules>
+		</profile>
+
+	</profiles>
+
+</project>

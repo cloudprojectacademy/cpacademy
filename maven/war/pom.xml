@@ -1,0 +1,230 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<!-- never change here for your local settings, properties can be overrided 
+		in settings.xml -->
+	<properties>
+		<artifact.id>${cpacademy.war.artifact.id}</artifact.id>
+		<web.xml.file>../../mvc/src/main/webapp/WEB-INF/web.xml</web.xml.file>
+		<tomcat.context.file.location>/opt/cpacademy/cots/tomcat/conf/Catalina/localhost/ROOT.xml</tomcat.context.file.location>
+		<resources.dir>../mvc/src/main/resources</resources.dir>
+
+	</properties>
+
+	<parent>
+		<groupId>${cpacademy.group.id}</groupId>
+		<artifactId>${cpacademy.parent.artifact.id}</artifactId>
+		<version>${cpacademy.version}</version>
+		<relativePath>../common/pom.xml</relativePath>
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>${artifact.id}</artifactId>
+	<name>CPACADEMY-WAR</name>
+
+	<packaging>war</packaging>
+
+	<dependencies>
+
+		<!-- All modules here are included into the war -->
+		<dependency>
+			<groupId>${cpacademy.group.id}</groupId>
+			<artifactId>${cpacademy.core.artifact.id}</artifactId>
+			<version>${cpacademy.version}</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>${cpacademy.group.id}</groupId>
+			<artifactId>${cpacademy.domain.artifact.id}</artifactId>
+			<version>${cpacademy.version}</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>${cpacademy.group.id}</groupId>
+			<artifactId>${cpacademy.service-mvc.artifact.id}</artifactId>
+			<version>${cpacademy.version}</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>${cpacademy.group.id}</groupId>
+			<artifactId>${cpacademy.mvc.artifact.id}</artifactId>
+			<version>${cpacademy.version}</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- SPRING Jars starts here -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-aop</artifactId>
+				<scope>compile</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-aspects</artifactId>
+				<scope>compile</scope>				
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-beans</artifactId>
+				<scope>compile</scope>				
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-support</artifactId>
+				<scope>compile</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<scope>compile</scope>				
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<scope>compile</scope>				
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-instrument</artifactId>
+				<scope>compile</scope>				
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-test</artifactId>
+				<scope>compile</scope>				
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<scope>compile</scope>				
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-expression</artifactId>
+				<scope>compile</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-webmvc</artifactId>
+				<scope>compile</scope>				
+			</dependency>				
+			<dependency>
+				<groupId>commons-fileupload</groupId>
+				<artifactId>commons-fileupload</artifactId>
+				<scope>compile</scope>								
+			</dependency>				
+
+			<!-- Hibernate Jars -->
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-core</artifactId>
+				<scope>compile</scope>				
+			</dependency>
+
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-annotations</artifactId>
+				<scope>compile</scope>				
+			</dependency>
+
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-entitymanager</artifactId>
+				<scope>compile</scope>				
+			</dependency>
+
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-validator</artifactId>
+				<scope>compile</scope>				
+			</dependency>
+
+			<!-- slf4j/Log4j starts here -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<scope>compile</scope>				
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-log4j13</artifactId>
+				<scope>compile</scope>				
+			</dependency>
+			<!-- slf4j/Log4j ends here -->
+			
+			<!-- JSTL starts here -->
+			<dependency>
+				<groupId>jstl</groupId>
+				<artifactId>jstl</artifactId>
+				<scope>compile</scope>				
+			</dependency>
+			<!-- JSTL ends here -->
+	
+	</dependencies>
+
+	<build>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<warSourceDirectory>${html.dir}</warSourceDirectory>
+					<webXml>${web.xml.file}</webXml>
+					<webResources>
+						<resource>
+							<directory>${resources.dir}</directory>
+						</resource>
+					</webResources>
+				</configuration>
+			</plugin>
+		</plugins>
+
+	</build>
+
+
+	<profiles>
+
+		<!-- development profile overrides war plugin and does an automated tomcat 
+			deploy -->
+		<profile>
+			<id>profile-dev</id>
+			<build>
+				<plugins>
+
+					<!-- Deploy the context.xml as the ROOT.xml in the Tomcat Catalina localhost 
+						directory. The context.xml changes the docbase dictory to this maven build 
+						directory, this allows us to tell Tomcat to load the war that maven built 
+						without having to copy it over to the webapps directory. -->
+					<plugin>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>depoy-tomcat-context</id>
+								<phase>package</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<tasks>
+										<copy file="context.xml" tofile="${tomcat.context.file.location}" overwrite="true" />
+									</tasks>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+
+				</plugins>
+			</build>
+		</profile>
+
+	</profiles>
+
+</project>

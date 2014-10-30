@@ -1,0 +1,92 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <!--
+        never change here for your local settings, properties can be overrided
+        in settings.xml
+    -->
+    <properties>
+        <artifact.id>${cpacademy.persistence.artifact.id}</artifact.id>
+        <source.dir>../../persistence/src/main/java</source.dir>
+        <resources.dir>../../persistence/src/main/resources</resources.dir>
+        <test.source.dir>../../persistence/src/test/java</test.source.dir>
+        <test.resources.dir>../../persistence/src/test/resources</test.resources.dir>
+        
+    </properties>
+
+    <parent>
+        <groupId>${cpacademy.group.id}</groupId>
+        <artifactId>${cpacademy.parent.artifact.id}</artifactId>
+        <version>${cpacademy.version}</version>
+        <relativePath>../common/pom.xml</relativePath>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>${artifact.id}</artifactId>
+    <name>CPACADEMY-PERSISTENCE</name>
+    <description>Jar file that contains cpacademy persistence code</description>
+    <packaging>jar</packaging>
+    
+    <dependencies>
+        <dependency>
+            <groupId>${cpacademy.group.id}</groupId>
+            <artifactId>${cpacademy.core.artifact.id}</artifactId>
+            <version>${cpacademy.version}</version>
+            <type>jar</type>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>${cpacademy.group.id}</groupId>
+            <artifactId>${cpacademy.domain.artifact.id}</artifactId>
+            <version>${cpacademy.version}</version>
+            <type>jar</type>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+    
+    
+    <build>
+
+        <resources>
+            <resource>
+                <directory>${resources.dir}</directory>
+            </resource>        
+        </resources>
+        
+        <testSourceDirectory>${test.source.dir}</testSourceDirectory>
+
+        <testResources>
+            <testResource>
+                <directory>${test.resources.dir}</directory>
+                
+                <!-- exclude the resources from the real deploy, persistence.xml in there causes problems -->
+                <excludes>
+                    <exclude>${resources.dir}</exclude>
+                </excludes>
+            </testResource>
+        </testResources>
+
+        <plugins>
+
+            <!-- after verification is successful, now we can compile -->
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+
+            <!-- create an INDEX.LIST of packages in the jar META-INF -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <index>true</index>
+                    </archive>
+                </configuration>
+            </plugin>
+
+        </plugins>
+
+    </build>
+
+</project>

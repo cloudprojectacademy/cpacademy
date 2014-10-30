@@ -1,0 +1,18 @@
+This is a new framework for the SmartHires to support various applications - Post jobs online via Desktop, Post jobs via Mobile and API Services.
+
+This framework uses Maven for the build process. Below are the various modules and their definitions:
+
+mvc - This module will have all the web tier classes (Controllers, JSP's, Scripts, Styles etc)
+
+domain - This module will have all the POJO classes for each tables in the database. The 'mvc' layer creates the domain classes and pass it to the Service/Persistence layer.
+
+service - This module will have all the ServiceImpl (app) classes which will have all the business logic. The service layer will talk to database via persistence layer.
+
+persistence - This module will have all the persistence manager impl classes which uses the Hibernate + JPA + Native Queries to get the data from database.
+
+core - This module will have all the core common classes which are used by other modules.
+
+maven - This module will have all the pom files needed to build the complete project (See more details on the Maven structure & deliverables on Shires Wiki page).
+
+
+

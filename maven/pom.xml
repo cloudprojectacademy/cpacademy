@@ -1,0 +1,38 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <properties>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- global version and group id -->
+        <shires.version>1.0</shires.version>
+        <shires.group.id>shires</shires.group.id>                
+        <shires.top.artifact.id>shires-top</shires.top.artifact.id>
+    </properties>
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>${shires.group.id}</groupId>
+    <artifactId>${shires.top.artifact.id}</artifactId>
+    <packaging>pom</packaging>
+    <version>${shires.version}</version>
+    <name>SHIRES-TOP</name>
+    <description>This is the top project file, most things are declared in the common\pom.xml</description>
+    <url>www.smarthires.com</url>
+
+    <build>
+
+        <!-- file name same as artifact id -->
+        <finalName>${artifact.id}</finalName>
+        <!-- default goal -->
+        <defaultGoal>install</defaultGoal>
+
+    </build>
+
+    <modules>
+        <!-- the build starts in common -->
+        <module>common</module>
+    </modules>
+
+</project>

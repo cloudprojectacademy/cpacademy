@@ -1,0 +1,85 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <!--
+        never change here for your local settings, properties can be overrided
+        in settings.xml
+    -->
+    <properties>
+        <artifact.id>${cpacademy.service-mvc.artifact.id}</artifact.id>
+        <source.dir>../../service/src/main/java</source.dir>
+        <resources.dir>../../service/src/main/resources</resources.dir>
+    </properties>
+
+    <parent>
+        <groupId>${cpacademy.group.id}</groupId>
+        <artifactId>${cpacademy.parent.artifact.id}</artifactId>
+        <version>${cpacademy.version}</version>
+        <relativePath>../common/pom.xml</relativePath>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>${artifact.id}</artifactId>
+    <name>CPACADEMY-SERVICE-MVC</name>
+    <description>Jar file that contains cpacademy service local and remote interfaces</description>
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>${cpacademy.group.id}</groupId>
+            <artifactId>${cpacademy.core.artifact.id}</artifactId>
+            <version>${cpacademy.version}</version>
+            <type>jar</type>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>${cpacademy.group.id}</groupId>
+            <artifactId>${cpacademy.domain.artifact.id}</artifactId>
+            <version>${cpacademy.version}</version>
+            <type>jar</type>
+            <scope>provided</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>${cpacademy.group.id}</groupId>
+            <artifactId>${cpacademy.persistence.artifact.id}</artifactId>
+            <version>${cpacademy.version}</version>
+            <type>jar</type>
+            <scope>provided</scope>
+        </dependency>
+           
+    </dependencies> 
+    
+
+    <build>
+        <resources>
+            <resource>
+                <directory>${resources.dir}</directory>
+                <includes>
+                    <include>ServiceContext-remote.xml</include>
+                </includes>
+            </resource>
+        </resources>
+        
+        <plugins>
+
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <index>true</index>
+                    </archive>
+                </configuration>
+            </plugin>
+
+        </plugins>
+
+    </build>
+
+</project>
