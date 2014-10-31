@@ -1,5 +1,5 @@
-package com.shires.service.job;
+package com.cpacademy.service.user;
 
-public class JobApplicationServiceLocal {
+public class UserServiceLocal {
 
 }

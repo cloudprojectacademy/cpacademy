@@ -6,18 +6,18 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <!-- global version and group id -->
-        <shires.version>1.0</shires.version>
-        <shires.group.id>shires</shires.group.id>                
-        <shires.top.artifact.id>shires-top</shires.top.artifact.id>
+        <cpacademy.version>1.0</cpacademy.version>
+        <cpacademy.group.id>cpacademy</cpacademy.group.id>                
+        <cpacademy.top.artifact.id>cpacademy-top</cpacademy.top.artifact.id>
     </properties>
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>${shires.group.id}</groupId>
-    <artifactId>${shires.top.artifact.id}</artifactId>
+    <groupId>${cpacademy.group.id}</groupId>
+    <artifactId>${cpacademy.top.artifact.id}</artifactId>
     <packaging>pom</packaging>
-    <version>${shires.version}</version>
-    <name>SHIRES-TOP</name>
+    <version>${cpacademy.version}</version>
+    <name>CPACADEMY-TOP</name>
     <description>This is the top project file, most things are declared in the common\pom.xml</description>
     <url>www.smarthires.com</url>
 

@@ -1,4 +1,4 @@
-package com.shires.core.util;
+package com.cpacademy.core.util;
 
 public class StringUtil {
 

@@ -1,5 +1,5 @@
-package com.shires.domain.job;
+package com.cpacademy.domain.user;
 
-public class JobApplication {
+public class User {
 
 }

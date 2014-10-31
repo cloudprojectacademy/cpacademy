@@ -1,5 +1,5 @@
-package com.shires.service.job.impl;
+package com.cpacademy.service.user.impl;
 
-public class JobApplicationComponentImpl {
+public class UserComponentImpl {
 
 }

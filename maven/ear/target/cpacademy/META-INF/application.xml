@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE application PUBLIC
+	"-//Sun Microsystems, Inc.//DTD J2EE Application 1.3//EN"
+	"http://java.sun.com/dtd/application_1_3.dtd">
+<application>
+  <display-name>cpacademy</display-name>
+  <description>This is the top project file, most things are declared in the common\pom.xml</description>
+  <module>
+    <ejb>cpacademy-persistence-1.0.jar</ejb>
+  </module>
+  <module>
+    <java>cpacademy-core-1.0.jar</java>
+  </module>
+  <module>
+    <java>cpacademy-domain-1.0.jar</java>
+  </module>
+  <module>
+    <ejb>cpacademy-service-1.0.jar</ejb>
+  </module>
+  <module>
+    <java>mysql-connector-java-5.0.8.jar</java>
+  </module>
+</application>

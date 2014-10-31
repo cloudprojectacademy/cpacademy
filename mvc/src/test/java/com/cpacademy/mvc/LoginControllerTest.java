@@ -1,4 +1,4 @@
-package com.shires.mvc;
+package com.cpacademy.mvc;
 
 public class JobSearchControllerTest {
 

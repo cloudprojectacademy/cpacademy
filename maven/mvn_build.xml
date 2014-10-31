@@ -1,9 +1,9 @@
 
-<!-- mvn build commands for SHIRES  -->
+<!-- mvn build commands for cpacademy  -->
     
-<project name="shires-mvn-build" basedir="." default="mvn">
+<project name="cpacademy-mvn-build" basedir="." default="mvn">
 	
-    <property name="jboss-deploy-location" value="/opt/shires/cots/jboss-5.1.0.GA/server/all.shires/deploy"/>
+    <property name="jboss-deploy-location" value="/opt/cpacademy/cots/jboss-5.1.0.GA/server/all.cpacademy/deploy"/>
     
 	<target name="mvn">
         <exec executable="cmd" failonerror="true">

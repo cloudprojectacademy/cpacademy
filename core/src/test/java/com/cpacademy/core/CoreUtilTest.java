@@ -1,4 +1,4 @@
-package com.shires.core;
+package com.cpacademy.core;
 
 public class CoreUtilTest {
 

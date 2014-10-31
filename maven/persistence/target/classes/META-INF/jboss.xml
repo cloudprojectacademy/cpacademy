@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss>
+	<enterprise-beans>
+		<!-- Define Beans alphabetically within Manager and Services -->
+ 
+				 
+	</enterprise-beans>
+</jboss>

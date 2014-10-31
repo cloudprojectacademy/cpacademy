@@ -1,5 +1,5 @@
-package com.shires.persistence.job.manager;
+package com.cpacademy.persistence.user.manager;
 
-public class JobApplicationManager {
+public class UserManager {
 
 }
