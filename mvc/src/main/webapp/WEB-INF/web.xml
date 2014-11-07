@@ -29,19 +29,19 @@
   </listener>
   
   <servlet>
-    <servlet-name>jobhires</servlet-name>
+    <servlet-name>cpacademyapp</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     <init-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>/WEB-INF/context/jobhires-context.xml</param-value>
+        <param-value>/WEB-INF/context/myprojects-context.xml</param-value>
     </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
   
   <!-- Mapping for the all Spring Controllers -->
   <servlet-mapping>
-    <servlet-name>jobhires</servlet-name>
-    <url-pattern>/jobapp/*</url-pattern>
+    <servlet-name>cpacademyapp</servlet-name>
+    <url-pattern>/cpacademy/*</url-pattern>
   </servlet-mapping>
     
 

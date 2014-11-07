@@ -9,18 +9,18 @@
 		</layout>
 	</appender>
 
-	<appender name="shires_webtier_logging" class="org.apache.log4j.RollingFileAppender">
+	<appender name="cpacademy_webtier_logging" class="org.apache.log4j.RollingFileAppender">
 		<param name="MaxFileSize"  value="1024KB"/>
 		<param name="MaxBackupIndex" value="4"/>
-		<param name="File" value="/opt/shires/log/shires_tomcat.log"/>		
+		<param name="File" value="/opt/cpacademy/log/cpacademy_tomcat.log"/>		
 		<layout class="org.apache.log4j.PatternLayout">
 		<param name="ConversionPattern" value="%d %-5p [%-c{1}] - %m%n"/>
 	    </layout>
 	</appender>
 
- <logger name="com.shires">
+ <logger name="com.cpacademy">
   	<level value="INFO"/>
-        <appender-ref ref="shires_webtier_logging" />
+        <appender-ref ref="cpacademy_webtier_logging" />
  </logger>
  
 

@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context path="/" crossContext="false" swallowOutput="false" docBase="/opt/shires/build/maven/war/target/mvc" reloadable="false">
+<Context path="/" crossContext="false" swallowOutput="false" docBase="/opt/cpacademy/build/maven/war/target/mvc" reloadable="false">
   <Manager pathname=""/>
 </Context>

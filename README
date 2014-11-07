@@ -12,7 +12,7 @@ persistence - This module will have all the persistence manager impl classes whi
 
 core - This module will have all the core common classes which are used by other modules.
 
-maven - This module will have all the pom files needed to build the complete project (See more details on the Maven structure & deliverables on Shires Wiki page).
+maven - This module will have all the pom files needed to build the complete project (See more details on the Maven structure & deliverables on CPacademy Wiki page).
 
 
 
