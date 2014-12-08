@@ -1,5 +1,8 @@
 package com.cpacademy.persistence.user.manager;
 
-public class UserManager {
+import com.cpacademy.domain.user.entity.User;
 
+public interface UserManager {
+
+	public User authenticateUser(String username, String password) throws SecurityException;
 }

@@ -165,6 +165,19 @@
 				<artifactId>jstl</artifactId>
 				<scope>compile</scope>				
 			</dependency>
+			
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>servlet-api</artifactId>
+				<scope>compile</scope>		
+		    </dependency>
+		    <!-- 
+		 	<dependency>
+				<groupId>javaee</groupId>
+				<artifactId>javaee</artifactId>
+				<scope>compile</scope>		
+			</dependency>
+			 -->			
 			<!-- JSTL ends here -->
 	
 	</dependencies>

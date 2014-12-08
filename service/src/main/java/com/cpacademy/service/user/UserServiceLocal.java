@@ -1,5 +1,8 @@
 package com.cpacademy.service.user;
 
-public class UserServiceLocal {
+import com.cpacademy.domain.user.entity.User;
 
+public interface UserServiceLocal {
+
+	public User authenticateUser(String username, String password);
 }

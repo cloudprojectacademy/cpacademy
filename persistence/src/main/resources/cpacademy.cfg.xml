@@ -4,6 +4,6 @@
              "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-          <!--<mapping class="com.cpacademy.domain."/> -->
+          <mapping class="com.tickets.domain.user.entity.User"/>
     </session-factory>
 </hibernate-configuration>

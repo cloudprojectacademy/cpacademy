@@ -11,10 +11,19 @@
     <!-- Add service names alphabetically -->
     <!-- declare remote interfaces only! -->
         
-		<!--
-    <bean id="XXXServiceRemote" class="org.springframework.ejb.access.SimpleRemoteStatelessSessionProxyFactoryBean">
-        <property name="jndiName" value="ejb/AdminsecurityServiceRemote"/>  
-        <property name="businessInterface" value="com.shires.service.xx.XXServiceRemote"/>
+    <bean id="placeholderConfig" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+			<list>
+				<value>file:/opt/cpacademy/properties/jndi.properties</value>
+				<value>file:/opt/cpacademy/properties/jboss-ejb-client.properties</value>
+			</list>
+		</property>
+		<property name="ignoreUnresolvablePlaceholders" value="true"/>
+    </bean>
+    
+	<bean id="onlinePromotionServiceRemote" class="org.springframework.ejb.access.SimpleRemoteStatelessSessionProxyFactoryBean">
+        <property name="jndiName" value="ejb:pvo2/pvo2-service//OnlinePromotionServiceImpl!com.tickets.service.onlinepromotion.OnlinePromotionServiceRemote"/>  
+        <property name="businessInterface" value="com.tickets.service.onlinepromotion.OnlinePromotionServiceRemote"/>
         <property name="jndiTemplate">
            <ref bean="jndiTemplate"/>
         </property>
@@ -23,11 +32,9 @@
     <bean id="jndiTemplate" class="org.springframework.jndi.JndiTemplate">
         <property name="environment">
            <props>
-             <prop key="java.naming.factory.initial">${java.naming.factory.initial}</prop>
              <prop key="java.naming.factory.url.pkgs">${java.naming.factory.url.pkgs}</prop>
-             <prop key="java.naming.provider.url">${java.naming.provider.url}</prop>
            </props>
          </property>
-    </bean>
-		-->
+    </bean>    
+
 </beans>
