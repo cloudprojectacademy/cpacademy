@@ -10,6 +10,7 @@ import javax.ejb.TransactionAttributeType;
 import org.jboss.ejb3.annotation.Clustered;
 
 import com.cpacademy.domain.user.entity.User;
+import com.cpacademy.persistence.user.manager.UserManager;
 import com.cpacademy.service.common.impl.AbstractServiceImpl;
 import com.cpacademy.service.user.UserServiceLocal;
 import com.cpacademy.service.user.UserServiceRemote;
@@ -27,7 +28,7 @@ public class UserServiceImpl extends AbstractServiceImpl implements UserServiceL
 	private UserManager userManager;
 	
 	public User authenticateUser(String username, String password) {
-		User user = this.userManager.authenticateAdminUser(username, password);
+		User user = this.userManager.authenticateUser(username, password);
 		return user;
 	}	
 }
