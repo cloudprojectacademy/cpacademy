@@ -6,7 +6,7 @@
 	<properties>
 		<artifact.id>${cpacademy.ear.artifact.id}</artifact.id>
 		<cpacademy.ear.file.name>${cpacademy.ear.artifact.id}.ear</cpacademy.ear.file.name>
-		<cpacademy.ear.deploy.location>${cpacademy.jboss.deploy.location}/deploy</cpacademy.ear.deploy.location>
+		<cpacademy.ear.deploy.location>${cpacademy.jboss.deploy.location}</cpacademy.ear.deploy.location>
 	</properties>
 
 	<parent>

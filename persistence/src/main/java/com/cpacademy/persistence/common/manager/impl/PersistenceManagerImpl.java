@@ -85,7 +85,7 @@ public class PersistenceManagerImpl implements PersistenceManager {
 		entityManager.flush();
 	}
 
-	@PersistenceContext(unitName = "PVO-EntityManager")
+	@PersistenceContext(unitName = "CPA-EntityManager")
 	public void setEntityManager(EntityManager entityManager) {
 		this.entityManager = entityManager;
 	}

@@ -19,7 +19,7 @@
 
 		<!-- global source code directory -->
 		<source.dir></source.dir>
-		<cpacademy.jboss.deploy.location>/opt/pvo/cots/jboss/standalone/deployments</cpacademy.jboss.deploy.location>
+		<cpacademy.jboss.deploy.location>/opt/cpacademy/cots/jboss/standalone/deployments</cpacademy.jboss.deploy.location>
 
 		<!-- Prevents concurrent builds on same machine by creating temporary file 
 			lock file created for each pom.xml during the validate phase and deleting 
