@@ -14,7 +14,7 @@ public class UserManagerImpl extends PersistenceManagerImpl implements UserManag
 	public User authenticateUser(String username, String password) throws SecurityException {
 		User user = null;
 		try {
-			//msecuser = (MsecUser) this.getEntityManager().createNamedQuery("MsecUser.findAdminUserByUsernameAndPassword").setParameter("username", username).setParameter("password", encryptedPwd).getSingleResult();
+			user = (User) this.getEntityManager().createNamedQuery("User.findUserByUsernameAndPassword").setParameter("username", username).setParameter("password", password).getSingleResult();
 
 		} catch (Throwable ex) {
 			throw new SecurityException("We are unable to authenticate the username/password. Please check the credetionals and try again.");
@@ -22,4 +22,9 @@ public class UserManagerImpl extends PersistenceManagerImpl implements UserManag
 
 		return user;
 	}
+	
+
+	public User getUser(Long userId) {
+		return this.find(User.class, userId);
+	}	
 }

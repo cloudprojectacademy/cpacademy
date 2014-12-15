@@ -295,15 +295,14 @@
 				<type>jar</type>
 				<scope>provided</scope>
 			</dependency>			
-			<!-- 
+ 
 			<dependency>
 				<groupId>javaee</groupId>
-				<artifactId>javaee</artifactId>
-				<version>9.0</version>
+				<artifactId>javaee-api</artifactId>
+				<version>5</version>
 				<type>jar</type>
 				<scope>provided</scope>
 			</dependency>
-			 -->			
 			<!-- JSTL ends here -->
 			
 			<!-- MySQL Driver -->
@@ -427,12 +426,12 @@
 				<groupId>javax.servlet</groupId>
 				<artifactId>servlet-api</artifactId>
 		    </dependency>
-		    <!-- 
-		 	<dependency>
+
+			<dependency>
 				<groupId>javaee</groupId>
-				<artifactId>javaee</artifactId>
+				<artifactId>javaee-api</artifactId>
 			</dependency>
-		    	 -->		
+					
 			<!-- JSTL ends here -->
 			
 			<dependency>
