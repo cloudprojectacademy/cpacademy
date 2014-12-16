@@ -1,0 +1,61 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<!--
+		never change here for your local settings, properties can be overrided
+		in settings.xml
+	-->
+	<properties>
+		<artifact.id>jsponly</artifact.id>
+		<war.target.dir>../war/target/mvc</war.target.dir>
+	</properties>
+
+	<parent>
+		<groupId>cpacademy</groupId>
+		<artifactId>cpacademy-common</artifactId>
+		<version>1.0</version>
+		<relativePath>../common/pom.xml</relativePath>
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>jsponly</artifactId>
+	<name>CPACADEMY-JSPONLY</name>
+	<description>Copies everything from HTML folder except WEB-INF</description>
+	<packaging>pom</packaging>
+
+
+	<build>
+		
+		<sourceDirectory />
+		<plugins>
+
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy-jsps</id>
+						<phase>package</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<tasks>
+								<echo>Copying JSP files...</echo>
+								<copy todir="${war.target.dir}">
+									<fileset dir="${html.dir}"> 
+									   <include name="**/*.jsp" />
+                                       <include name="**/*.css" />
+                                       <include name="**/*.js" />
+                                       <include name="**/*.inc" />
+									</fileset>									
+								</copy>
+							</tasks>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+
+	</build>
+
+</project>

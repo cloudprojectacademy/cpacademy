@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/" crossContext="false" swallowOutput="false" docBase="/opt/cpacademy/build/src/maven/webtier-web/target/cpacademy-webtier-web" reloadable="false">
+  <Manager pathname=""/>
+</Context>
