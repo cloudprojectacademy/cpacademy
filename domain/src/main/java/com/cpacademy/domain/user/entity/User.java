@@ -16,7 +16,7 @@ import com.cpacademy.domain.common.entity.RootEntity;
 
 @NamedQueries({ @NamedQuery(name = "User.findUserByUsernameAndPassword", query = "select user from User user where user.username = :username and user.password = :password") })
 @Entity
-@Table(name = "USER")
+@Table(name = "User")
 public class User extends RootEntity{
 	
 	private static final long serialVersionUID = 1L;

@@ -3,7 +3,7 @@
     
 <project name="cpacademy-mvn-build" basedir="." default="mvn">
 	
-    <property name="jboss-deploy-location" value="/opt/cpacademy/cots/jboss-5.1.0.GA/server/all.cpacademy/deploy"/>
+    <property name="jboss-deploy-location" value="/opt/cpacademy/cots/jboss/standalone/deployments"/>
     
 	<target name="mvn">
         <exec executable="cmd" failonerror="true">
