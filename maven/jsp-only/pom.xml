@@ -11,9 +11,9 @@
 	</properties>
 
 	<parent>
-		<groupId>cpacademy</groupId>
-		<artifactId>cpacademy-common</artifactId>
-		<version>1.0</version>
+		<groupId>${cpacademy.group.id}</groupId>
+		<artifactId>${cpacademy.parent.artifact.id}</artifactId>
+		<version>${cpacademy.version}</version>
 		<relativePath>../common/pom.xml</relativePath>
 	</parent>
 
