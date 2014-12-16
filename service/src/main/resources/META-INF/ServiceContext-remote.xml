@@ -21,9 +21,9 @@
 		<property name="ignoreUnresolvablePlaceholders" value="true"/>
     </bean>
     
-	<bean id="onlinePromotionServiceRemote" class="org.springframework.ejb.access.SimpleRemoteStatelessSessionProxyFactoryBean">
-        <property name="jndiName" value="ejb:pvo2/pvo2-service//OnlinePromotionServiceImpl!com.tickets.service.onlinepromotion.OnlinePromotionServiceRemote"/>  
-        <property name="businessInterface" value="com.tickets.service.onlinepromotion.OnlinePromotionServiceRemote"/>
+	<bean id="userServiceRemote" class="org.springframework.ejb.access.SimpleRemoteStatelessSessionProxyFactoryBean">
+        <property name="jndiName" value="ejb:cpacademy/cpacademy-service//UserServiceImpl!com.cpacademy.service.user.UserServiceRemote"/>  
+        <property name="businessInterface" value="com.cpacademy.service.user.UserServiceRemote"/>
         <property name="jndiTemplate">
            <ref bean="jndiTemplate"/>
         </property>
