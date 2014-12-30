@@ -41,6 +41,6 @@ public class HomeController {
 		}catch(Throwable e){
 			/**/
 		}
-		return "security/Login";
+		return "PurchaseProject";
 	}
 }

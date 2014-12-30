@@ -1,0 +1,47 @@
+
+@font-face {
+    font-family: 'proxima_nova_bold';
+    src: url('http://54.69.215.212/styles/proximanova-bold-webfont.eot');
+    src: url('http://54.69.215.212/styles/proximanova-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('http://54.69.215.212/styles/proximanova-bold-webfont.woff') format('woff'),
+         url('http://54.69.215.212/styles/proximanova-bold-webfont.ttf') format('truetype'),
+         url('http://54.69.215.212/styles/proximanova-bold-webfont.svg#proxima_nova_rgbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'proxima_nova_semi_bold';
+    src: url('http://54.69.215.212/styles/proximanova-semibold-webfont.eot');
+    src: url('http://54.69.215.212/styles/proximanova-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('http://54.69.215.212/styles/proximanova-semibold-webfont.woff') format('woff'),
+         url('http://54.69.215.212/styles/proximanova-semibold-webfont.ttf') format('truetype'),
+         url('https://github.com/puma/puma.io/blob/gh-pages/fonts/proximanova-semibold-webfont.svg#proxima_novasemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'proxima_nova';
+    src: url('http://54.69.215.212/styles/proximanova-regular-webfont.eot');
+    src: url('http://54.69.215.212/styles/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('http://54.69.215.212/styles/proximanova-regular-webfont.woff') format('woff'),
+         url('http://54.69.215.212/styles/proximanova-regular-webfont.ttf') format('truetype'),
+         url('http://54.69.215.212/styles/proximanova-regular-webfont.svg#proxima_nova_rgregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'proxima_nova_light';
+    src: url('http://54.69.215.212/styles/proximanova-light-webfont.eot');
+    src: url('http://54.69.215.212/styles/proximanova-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('http://54.69.215.212/styles/proximanova-light-webfont.woff') format('woff'),
+         url('http://54.69.215.212/styles/proximanova-light-webfont.ttf') format('truetype'),
+         url('http://54.69.215.212/styles/proximanova-light-webfont.svg#proxima_novalight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

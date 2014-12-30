@@ -1,10 +1,18 @@
 <%@ page session="false" %>
 
 <jsp:include page="Header.jsp" flush="true"/>
-<div class="home_left">
-	<div class="form-wrap">About us</div>
+<div class="col30">
+    <div class="topbutton expandable">
+      <h3 class="s3">My Account</h3>
+      <h5 class="s2">Your account information.</h5>
+    </div>
+    <div class="topbutton expandable">
+      <h3 class="s3">Purchase Project</h3>
+      <h5 class="s2">Select & purchase your project.</h5>
+    </div>
 </div>	
-<div class="signup-page">
+<div class="col50">
+	<div class="logo"><a href="/"><img src="http://54.69.215.212/images/CPA_Logo.png" alt="logo"></a></div>
 	<div class="form-wrap">
 	    <h3 class="error" id="error_msg"></h3>
 		<form method="post" id="cpa_form" name="cpa_form" action="/cpacademy/pacademyhome">
@@ -19,8 +27,8 @@
 		</form>
 	</div>
 </div>
-<div class="home_right">
+<div class="col20">
 	<div class="form-wrap">How does this work?</div>
 </div>
 
-<jsp:include page="Footer.jsp" flush="true"/>
+
