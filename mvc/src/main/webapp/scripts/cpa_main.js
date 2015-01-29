@@ -5,3 +5,7 @@ $("#signin").click(function(){
 	}
     $('#cpa_form').submit();
 });
+
+$("#join_cpa_btn").click(function(){	
+});
+

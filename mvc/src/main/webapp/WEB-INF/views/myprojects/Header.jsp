@@ -7,11 +7,13 @@
 		<link rel="icon" type="image/png" href="img/favicon.ico">
 		<link rel="stylesheet" href="http://54.69.215.212/styles/cpa.css">
 		<link rel="stylesheet" href="http://54.69.215.212/styles/cpa-font-awesome.css">
-		<link rel="stylesheet" href="http://54.69.215.212/styles/font-css.css">
+		<link rel="stylesheet" href="http://54.69.215.212/styles/cpa-font-css.css">
 		<meta name="viewport" content="width=device-width, user-scalable=no">
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	</head>
+	<!-- body starts here -->
 	<body class="signup">
 	  <div class="header">
 		<a href="/"><img src="http://54.69.215.212/images/CPA_Logo.png" alt="logo"></a>
+		<a href="javascript:void(0)" class="button_green" id="signup">Join the Project Academy</a>
 	  </div>

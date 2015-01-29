@@ -1,19 +1,4 @@
-<%@ page session="false" %>
-
-<jsp:include page="Header.jsp" flush="true"/>
-
-<div class="col30">
-    <div class="myaccountbutton">
-      <h3 class="buttontext">My Account</h3>
-    </div>
-    <div class="purchaseprojectbutton">
-      <h3 class="buttontext">Purchase Project</h3>
-    </div>
-
-</div>	
-<!-- Include the data here -->
-<div class="col50">
-		<div class="myaccount-form-wrap">
+	<div class="myaccount-form-wrap">
 	    <div class="headertext-label">Create Account</div>
 		<ul>
 			<li class="myaccount-form-li"><label for="fname" class="accountfieldlabel">First Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="text" id="fname" name="fname"></li>
@@ -55,10 +40,3 @@
 			<li class="savechanges-btn"><a href="javascript:void(0)" class="button_green" id="savechanges">Save Changes</a></li>
 		</ul>
 	</div>
-
-</div>
-<div class="col20"></div>
-
-
-
-

@@ -19,7 +19,7 @@ time, mark, audio, video {
 	font-weight: normal;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+/** HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -59,19 +59,6 @@ table {
 * { outline: none !important; }
 
 body { width: 100%; color: #2d2d2d; font-family: "proxima_nova"; font-size: 14px;  }
-
-.homeWrapper { background: url('/img/homepage_bg.jpg'); background-size: cover; position: fixed; top: 0px; right: 0px; left: 0px; bottom: 0px; width: 100%; height: 100%; z-index: -1; } 
-.wrapper { width: 940px; margin: auto; }
-
-header { width: 100%; max-width: 1250px; padding-top: 30px; margin: auto; }
-header .right { float: right; }
-header nav { float: left; font-family: "proxima_nova_bold"; margin-top: 15px; }
-header nav a { font-family: "proxima_nova_bold"; color: #fff; text-decoration: none; text-transform: uppercase; }
-header nav.links a { margin-right: 30px; margin-top: 12px; display: inline-block; padding-bottom: 3px; }
-#logo { float: left; }
-
-header nav.links a.active, header nav.links a:hover { border-bottom: #fff 2px solid; } 
-
 
 
 .button_orange{
@@ -132,58 +119,56 @@ background: #6cc326; -webkit-border-radius: 4px; -moz-border-radius: 4px;border-
 
 
 
-.wrapper { width: 100%; max-width: 1250px; }
-.center { text-align: center; }
-
-.home h1 { font-size: 48px; padding: 100px 20px 20px 20px; color:#2d2d2d; font-family: "proxima_nova"; }
-.home h4 { font-size: 20px; padding: 0px 20px 55px 20px; color:#fff; line-height:34px;  }
-.home-video { position:fixed; bottom: 0px; left: 50%; margin-left: -524px; z-index: 6; width: 1048px; height: 682px; }
-
-.video2 {text-align:center; padding-top:70px;}
-
-.bottomBar { width: 100%; position: fixed; height: 82px; left: 0px; bottom: 0px; right: 0px; background: url('/img/clear.png'); z-index: 10; }
-.bottomBar .inner { width: 846px; margin: auto; padding-top: 18px; position:relative; }
-.bottomBar .inner .bubble { position: absolute; top: -20px; left: 0px; background: #e46635; -webkit-border-radius: 3px; -moz-border-radius: 3px;border-radius: 3px; color: #fff; padding: 10px 12px; font-family: "proxima_nova_semi_bold"; }
-.bottomBar .inner .bubble span { background: #e46635; width: 10px; height: 10px; position:absolute; transform:rotate(45deg); -ms-transform:rotate(45deg); -webkit-transform:rotate(45deg); bottom: -4px; left: 22px; display: block; }
-.bottomBar .inner .bubble2 span { background: #3f8fc4; width: 10px; height: 10px; position:absolute; transform:rotate(45deg); -ms-transform:rotate(45deg); -webkit-transform:rotate(45deg); bottom: -4px; left: 22px; display: block; }
-.bottomBar .inner .bubble2 { left: 320px; display: none; background:#3f8fc4;}
-
- input { width: 270px; padding: 15px; border: none; color: #2d2d2d; font-family: "proxima_nova_semi_bold"; -webkit-border-radius: 4px; -moz-border-radius: 4px;border-radius: 4px; margin-right: 16px; font-size: 16px; }
-.bottomBar .button_green { padding: 17px 55px; font-size: 16px; }
+input { width: 270px; padding: 7px; border: none; color: #2d2d2d; font-family: "proxima_nova_semi_bold"; -webkit-border-radius: 4px; -moz-border-radius: 4px;border-radius: 4px; margin-right: 16px; font-size: 16px; }
 input:focus, input[type=checkbox]:checked { box-shadow: #137cb3 0px 0px 10px; }
+select { width: 270px; padding: 7px; border: none; color: #2d2d2d; font-family: "proxima_nova_semi_bold"; -webkit-border-radius: 4px; -moz-border-radius: 4px;border-radius: 4px; margin-right: 16px; font-size: 16px; }
 
 
-.mac-wrap { position: fixed; bottom: 0px; width: 100%; height: 100px; left: 0px; right: 0px; text-align: center;}
-.mac-wrap .inner { position: absolute; bottom: 0px; left: 0px; right: 0px; width: 100%; max-height: 100%; }
-.mac-wrap .inner img { max-height: 100%; max-width: 100%; }
 
-#mobileNav { color: #fff; padding: 15px; float: right; display: none; margin-top: 5px; }
-#mobileNav .bar { display: block; margin-bottom: 6px; width: 40px; height: 4px; background: #fff; -webkit-border-radius: 2px; -moz-border-radius: 2px;border-radius: 2px; }
 
 body.signup { background: url('http://54.69.215.212/images/cloud_background.jpg'); }
    
 .header {width:100%;float:left; background-color: #ffffff; margin-top: 0px; margin-right: 0px; margin-left: 0px;}
 .footer {width: auto;position: absolute;bottom: 0px;left: 50%; margin-left: -300px;}
 .content {color: #ffffff; font-size: 18px; font-family: "proxima_nova_semi_bold";margin-bottom: 10px;}
+#signup{float:right;margin-top: 30px;margin-right: 20px;}
+
 
 .signup-page { padding: 10px; text-align: center; color: #fff; width:30%; height:630px;float:left; background-color: #ffffff; margin-top: 2px;}
 .signup-page .logo { text-align: center; padding-bottom: 18px;} 
 .signup-page h1 { font-size: 35px; padding-bottom: 15px; }
 .signup-page h2 { font-size: 18px; padding-bottom: 30px; }
 .signup-page h3 { font-size: 18px; padding-bottom: 10px; }
-.signup-page .form-wrap { background: #94AFCC; padding: 15px; width: 475px; margin: auto; margin-top: 10px; margin-bottom: 10px; -webkit-border-radius: 3px; -moz-border-radius: 3px;border-radius: 3px; }
-.signup-page input { margin-bottom: 12px; margin-right: 0px; width: 325px; }
-.signup-page .form-wrap .button_green { padding: 15px; font-size: 16px; width: 325px; }
+.signup-page .form-wrap { background: #94AFCC; padding: 15px; width: 455px; margin: auto; margin-top: 10px; margin-bottom: 10px; -webkit-border-radius: 3px; -moz-border-radius: 3px;border-radius: 3px; }
+.signup-page input { margin-bottom: 12px; margin-right: 0px; width: 225px; }
+.signup-page .form-wrap .button_green { padding: 15px; font-size: 16px;}
 .signup-page .form-wrap .check { padding-top: 20px; font-size: 13px; }
 .signup-page input[type="checkbox"] { width: auto; margin-right: 4px; }
 .signup-page .form-wrap .forgot { position: relative; }
 .signup-page .form-wrap .forgot span { position: absolute; top: 20px; right: 15px; }
-.signup-page .forgot  a { color: #2e8dcf; text-decoration: none; font-size: 12px; font-family: "proxima_nova_semi_bold"; }
+.signup-page .forgot  a { color: #ffffff; text-decoration: none; font-size: 12px; font-family: "proxima_nova_semi_bold"; }
 .home_left {width:30%; height:650px; float:left; background-color: #ffffff; margin-top: 2px; margin-right: 20px; margin-left: 80px;}
-.home_left .form-wrap { background: #94AFCC; padding: 15px; width: 465px; margin: auto; margin-top: 10px; margin-bottom: 40px; -webkit-border-radius: 3px; -moz-border-radius: 3px;border-radius: 3px; }
+.home_left .form-wrap { background: #94AFCC; padding: 15px; width: 485px; margin: auto; margin-top: 20px; margin-bottom: 40px; -webkit-border-radius: 3px; -moz-border-radius: 3px;border-radius: 3px; }
 .home_right {width:30%; height:650px; float:left; background-color: #ffffff; margin-top: 2px;margin-right: 0px; margin-left: 20px;}
-.home_right .form-wrap { background: #94AFCC; padding: 15px; width: 465px; margin: auto; margin-top: 10px; margin-bottom: 40px; -webkit-border-radius: 3px; -moz-border-radius: 3px;border-radius: 3px; }
+.home_right .form-wrap { background: #94AFCC; padding: 15px; width: 455px; margin: auto; margin-top: 20px; margin-bottom: 40px; -webkit-border-radius: 3px; -moz-border-radius: 3px;border-radius: 3px; }
+.smalltext{color: #ffffff; font-size: 12px; font-family: "proxima_nova_semi_bold";}
+.loginlabel{color: #ffffff; font-size: 18px; font-family: "proxima_nova_semi_bold";}
 
-h3.error { color: #cf4343; }
+h3.error { color: #cf4343; font-family: "proxima_nova_bold"; font-size: 16px;}
 
-}
+/* Select Menu Page */
+
+.myaccountbutton {background: url("http://54.69.215.212/images/cpa_tab_plus.png");background-repeat: no-repeat;float: left;margin-top: 15px;margin-bottom: 6px;margin-left: 20px;margin-right: 4px;width: 386px;cursor: pointer;height: 72px;}
+.purchaseprojectbutton {background: url("http://54.69.215.212/images/cpa_tab_plus.png");background-repeat: no-repeat;float: left;margin-top: 6px;margin-bottom: 6px;margin-left: 20px;margin-right: 4px;width: 386px;cursor: pointer;height: 72px;}
+.buttontext{color: #164A84; font-size: 18px; font-family: "proxima_nova_semi_bold";margin-bottom: 10px; text-align: center;margin-top: 18px;margin-right: 120px;}
+
+.col30{ width: 30%; background-color: #54BC18;}
+.col50{ width: 50%; height:650px; float:left; background-color: #ffffff; margin-top: -76px; margin-right: 20px; margin-left: 80px;}
+.col20{ width: 20%;}
+.headertext-label{color: #ffffff;font-size: 22px;font-family: "proxima_nova_semi_bold";text-align: center;}
+.myaccount-form-wrap { background: #94AFCC; padding: 15px; width: 775px; margin: auto; margin-top: 10px; margin-bottom: 10px; -webkit-border-radius: 3px; -moz-border-radius: 3px;border-radius: 3px; }
+.accountfieldlabel {color: #ffffff;font-size: 16px;font-family: "proxima_nova_semi_bold";margin-bottom: 10px;padding: 10px 30px 0 0;margin-left: 120px;}
+.myaccount-form-li{margin-top: 10px; margin-bottom: 10px;}
+.myaccount-emp-form-li{margin-top: 40px; margin-bottom: 10px;}
+.myaccount-empdetails-form-li{margin-top: 10px; margin-bottom: 10px;}
+.savechanges-btn {margin-left: 300px;margin-top: 100px;}
