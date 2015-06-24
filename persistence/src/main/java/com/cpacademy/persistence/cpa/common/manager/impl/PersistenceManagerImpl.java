@@ -7,7 +7,6 @@ import javax.ejb.TransactionAttributeType;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.Session;
-import org.hibernate.ejb.EntityManagerImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.EntityManager;
@@ -18,7 +17,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.cpacademy.core.cpa.exception.ObjectNotFoundException;
-import com.cpacademy.core.cpa.exception.ProcessingException;
 import com.cpacademy.domain.cpa.common.entity.RootEntity;
 import com.cpacademy.persistence.cpa.common.manager.PersistenceManager;
 import com.cpacademy.persistence.cpa.util.ManagerUtil;
@@ -137,17 +135,8 @@ public class PersistenceManagerImpl implements PersistenceManager {
 	}
 
 	public Session getHibernateSession(EntityManager entityManager) {
-		Session session = null;
-		Object o = entityManager.getDelegate();
-		if (o instanceof Session) {
-			session = (Session) o;
-		} else if (o instanceof EntityManagerImpl) {
-			session = ((EntityManagerImpl) o).getSession();
-		} else {
-			String msg = "PersistenceManagerimpl.getHibernateSession() unable to get hibernate session from " + o.getClass().getName() + ".";
-			logger.error(msg);
-			throw new ProcessingException(msg);
-		}
+		Session session = entityManager.unwrap(Session.class);
+		
 		return session;
 	}
 
