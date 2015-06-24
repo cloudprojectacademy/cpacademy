@@ -1,4 +1,4 @@
-This is a new framework for the CloudProjetAcademy to support various applications.
+This is a new SOA framework for the CloudProjetAcademy to support various applications.
 
 This framework uses Maven for the build process. Below are the various modules and their definitions:
 
