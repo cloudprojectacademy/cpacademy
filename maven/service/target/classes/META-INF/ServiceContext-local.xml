@@ -10,10 +10,9 @@
 
     <!-- Add service names alphabetically -->
     <!-- declare local interfaces only! -->
-    <!-- 
-    <bean id="xxServiceLocal" class="org.springframework.ejb.access.LocalStatelessSessionProxyFactoryBean">
-        <property name="jndiName" value="ejb/XXServiceLocal"/>
-        <property name="businessInterface" value="com.shires.service.xx.XXServiceLocal"/>
-    </bean>
-	 -->
+	<bean id="userServiceLocal" class="org.springframework.ejb.access.LocalStatelessSessionProxyFactoryBean">
+        <property name="jndiName" value="ejb:cpacademy/cpacademy-service//UserServiceImpl!com.cpacademy.service.cpa.user.UserServiceLocal"/>  
+        <property name="businessInterface" value="com.cpacademy.service.cpa.user.UserServiceLocal"/>
+    </bean>	
+
 </beans>
