@@ -10,8 +10,6 @@ public class CPAUtil {
 		
 		// Return if the mv is null
 		if (mv == null || mv.getModel() == null) return;
-		
-		//UserToken userToken = new UserToken();
-		
+
 	}
 }

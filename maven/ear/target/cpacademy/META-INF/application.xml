@@ -6,7 +6,7 @@
   <display-name>cpacademy</display-name>
   <description>This is the top project file, most things are declared in the common\pom.xml</description>
   <module>
-    <ejb>cpacademy-persistence.jar</ejb>
+    <ejb>cpacademy-persistence-1.0.jar</ejb>
   </module>
   <module>
     <java>cpacademy-core-1.0.jar</java>
@@ -15,60 +15,9 @@
     <java>cpacademy-domain-1.0.jar</java>
   </module>
   <module>
-    <ejb>cpacademy-service.jar</ejb>
+    <ejb>cpacademy-service-1.0.jar</ejb>
   </module>
   <module>
     <java>mysql-connector-java-5.0.8.jar</java>
-  </module>
-  <module>
-    <java>hibernate-core-4.3.9.Final.jar</java>
-  </module>
-  <module>
-    <java>jboss-logging-3.1.3.GA.jar</java>
-  </module>
-  <module>
-    <java>jboss-logging-annotations-1.2.0.Beta1.jar</java>
-  </module>
-  <module>
-    <java>jboss-transaction-api_1.2_spec-1.0.0.Final.jar</java>
-  </module>
-  <module>
-    <java>hibernate-commons-annotations-4.0.5.Final.jar</java>
-  </module>
-  <module>
-    <java>hibernate-jpa-2.1-api-1.0.0.Final.jar</java>
-  </module>
-  <module>
-    <java>javassist-3.18.1-GA.jar</java>
-  </module>
-  <module>
-    <java>antlr-2.7.7.jar</java>
-  </module>
-  <module>
-    <java>jandex-1.1.0.Final.jar</java>
-  </module>
-  <module>
-    <java>hibernate-entitymanager-4.3.9.Final.jar</java>
-  </module>
-  <module>
-    <java>jboss-ejb-api_3.1-1.0-alpha-1.jar</java>
-  </module>
-  <module>
-    <java>jboss-transaction-api_1.0-1.0-alpha-1.jar</java>
-  </module>
-  <module>
-    <java>jbossws-native-jaxrpc-3.0.4.GA.jar</java>
-  </module>
-  <module>
-    <java>jbossws-native-saaj-3.0.4.GA.jar</java>
-  </module>
-  <module>
-    <java>activation-1.1.jar</java>
-  </module>
-  <module>
-    <java>jboss-ejb3-ext-api-2.1.0.jar</java>
-  </module>
-  <module>
-    <java>javaee-api-5.jar</java>
   </module>
 </application>

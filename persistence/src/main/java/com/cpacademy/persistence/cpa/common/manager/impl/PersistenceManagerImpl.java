@@ -7,6 +7,7 @@ import javax.ejb.TransactionAttributeType;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.Session;
+import org.hibernate.ejb.EntityManagerImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.EntityManager;
@@ -136,9 +137,17 @@ public class PersistenceManagerImpl implements PersistenceManager {
 	}
 
 	public Session getHibernateSession(EntityManager entityManager) {
-		
-		Session session = entityManager.unwrap(Session.class);
-		
+		Session session = null;
+		Object o = entityManager.getDelegate();
+		if (o instanceof Session) {
+			session = (Session) o;
+		} else if (o instanceof EntityManagerImpl) {
+			session = ((EntityManagerImpl) o).getSession();
+		} else {
+			String msg = "PersistenceManagerimpl.getHibernateSession() unable to get hibernate session from " + o.getClass().getName() + ".";
+			logger.error(msg);
+			throw new ProcessingException(msg);
+		}
 		return session;
 	}
 
