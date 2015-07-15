@@ -134,18 +134,17 @@
 				<scope>compile</scope>				
 			</dependency>
 
-			<!-- slf4j/Log4j starts here -->
 			<dependency>
 				<groupId>org.slf4j</groupId>
 				<artifactId>slf4j-api</artifactId>
-				<scope>compile</scope>				
+				<scope>compile</scope>
 			</dependency>
+
 			<dependency>
 				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-log4j13</artifactId>
-				<scope>compile</scope>				
+				<artifactId>slf4j-log4j12</artifactId>
+				<scope>compile</scope>
 			</dependency>
-			<!-- slf4j/Log4j ends here -->
 			
 			<!-- JSTL starts here -->
 			<dependency>

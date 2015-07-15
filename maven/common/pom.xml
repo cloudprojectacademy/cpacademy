@@ -238,23 +238,22 @@
 
 			<!-- Hibernate Jars ends here -->
 
-			<!-- slf4j/Log4j starts here -->
 			<dependency>
 				<groupId>org.slf4j</groupId>
 				<artifactId>slf4j-api</artifactId>
-				<version>1.7.9</version>
-				<type>jar</type>				
+				<version>1.6.1</version>
+				<type>jar</type>
 				<scope>provided</scope>
 			</dependency>
+
 			<dependency>
 				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-log4j13</artifactId>
-				<version>1.0.1</version>
-				<type>jar</type>				
-				<scope>provided</scope>				
+				<artifactId>slf4j-log4j12</artifactId>
+				<version>1.6.1</version>
+				<type>jar</type>
+				<scope>provided</scope>
 			</dependency>
-			<!-- slf4j/Log4j ends here -->
-			
+
 			<!-- JSTL starts here -->
 			<dependency>
 				<groupId>jstl</groupId>
@@ -371,18 +370,16 @@
 				<artifactId>hibernate-entitymanager</artifactId>
 			</dependency>
 
-
-			<!-- slf4j/Log4j starts here -->
 			<dependency>
 				<groupId>org.slf4j</groupId>
 				<artifactId>slf4j-api</artifactId>
 			</dependency>
+
 			<dependency>
 				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-log4j13</artifactId>
+				<artifactId>slf4j-log4j12</artifactId>
 			</dependency>
-			<!-- slf4j/Log4j ends here -->
-			
+
 			<!-- JSTL starts here -->
 			<dependency>
 				<groupId>jstl</groupId>
