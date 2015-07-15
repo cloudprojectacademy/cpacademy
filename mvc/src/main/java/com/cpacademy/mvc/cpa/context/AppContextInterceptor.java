@@ -16,6 +16,7 @@ import org.springframework.web.method.HandlerMethod;
 
 import com.cpacademy.core.cpa.common.UserContext;
 import com.cpacademy.core.cpa.context.AppContextHolder;
+import com.cpacademy.mvc.cpa.common.CPAUtil;
 
 
 public class AppContextInterceptor extends HandlerInterceptorAdapter {
@@ -64,7 +65,7 @@ public class AppContextInterceptor extends HandlerInterceptorAdapter {
 			logger.debug("postHandle.Determining the UserContext and setting to AppContext by the PVO Interceptor" + AppContextHolder.getUserContext().getId());
 
 		// Build the CPA Token and save it to to the View
-		//CPAUtil.buildCPAToken(request, mv);
+		CPAUtil.buildUserToken(request, mv);
 
 	}
 

@@ -1,12 +1,12 @@
 package com.cpacademy.mvc.cpa.myprojects;
 
 import javax.servlet.http.HttpServletRequest;
-//import org.slf4j.Logger;
-//import org.slf4j.LoggerFactory;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -17,7 +17,7 @@ import com.cpacademy.service.cpa.user.UserComponent;
 @RequestMapping(value = "/pacademyhome")
 public class HomeController {
 
-	//private static Logger logger = LoggerFactory.getLogger(HomeController.class);
+	private static Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	@Autowired
 	UserComponent userComponent;
@@ -33,11 +33,10 @@ public class HomeController {
 		String password = request.getParameter("password");
 
 		try{
-			System.out.println("Trying to authenticate the user. username:" + username + ", password:" + password);
-			//logger.info("Trying to authenticate the user. username:" + username + ", password:" + password);
+			logger.info("Trying to authenticate the user. username:" + username + ", password:" + password);
 			User user = this.userComponent.authenticateUser(username, password);
-			System.out.println("User is authenticated" + user.getUserId());
-			//logger.info("User is authenticated" + user.getUserId());
+			model.addAttribute("user", user);
+			logger.info("User is authenticated" + user.getUserId());
 		}catch(Throwable e){
 			/**/
 		}

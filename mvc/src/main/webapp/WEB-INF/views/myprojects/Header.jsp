@@ -10,6 +10,7 @@
 		<link rel="stylesheet" href="http://54.69.215.212/styles/cpa-font-css.css">
 		<meta name="viewport" content="width=device-width, user-scalable=no">
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="http://54.69.215.212/scripts/json2_min.js"></script>
 	</head>
 	<!-- body starts here -->
 	<body class="signup">
