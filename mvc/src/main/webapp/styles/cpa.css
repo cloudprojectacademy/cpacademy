@@ -132,6 +132,7 @@ body.signup { background: url('http://54.69.215.212/images/cloud_background.jpg'
 .footer {width: auto;position: absolute;bottom: 0px;left: 50%; margin-left: -300px;}
 .content {color: #ffffff; font-size: 18px; font-family: "proxima_nova_semi_bold";margin-bottom: 10px;}
 #signup{float:right;margin-top: 30px;margin-right: 20px;}
+#join_cpa_btn{float:right;margin-top: 30px;margin-right: 20px;}
 
 
 .signup-page { padding: 10px; text-align: center; color: #fff; width:30%; height:630px;float:left; background-color: #ffffff; margin-top: 2px;}

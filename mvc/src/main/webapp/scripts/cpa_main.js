@@ -6,7 +6,9 @@ $("#signin").click(function(){
     $('#cpa_form').submit();
 });
 
-$("#join_cpa_btn").click(function(){	
+$("#join_cpa_btn").click(function(){
+	$("#cpa_form").attr("action", "/cpacademy/pacademyhome/createuser"); 
+    $('#cpa_form').submit();	
 });
 
 // This function will be invoked when you change the Country drop down so that we populate the state/province data

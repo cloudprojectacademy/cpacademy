@@ -21,6 +21,11 @@
 		<property name="prefix" value="/WEB-INF/views/myprojects/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
+	
+	<mvc:interceptors>  
+	    <bean class="com.cpacademy.mvc.cpa.context.AppContextInterceptor" />  
+	</mvc:interceptors> 
+	
    
 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 	</bean>

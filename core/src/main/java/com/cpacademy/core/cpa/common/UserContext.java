@@ -28,8 +28,8 @@ public class UserContext implements Serializable {
 	/** The Constant UNDER_SCORE. */
 	private static final String UNDER_SCORE = "_";
 
-	/** The Constant TICKETS_SERVER_NAME. */
-	private static final String TICKETS_SERVER_NAME = "tickets.serverName";
+	/** The Constant CPA_SERVER_NAME. */
+	private static final String CPA_SERVER_NAME = "cpa.serverName";
 
 	/** The Constant DELIM. */
 	private static final String DELIM = "|";
@@ -208,7 +208,7 @@ public class UserContext implements Serializable {
 		this.subAgencyCode = subAgencyCode;
 		this.refererURL = refererURL;
 
-		this.internalOrigin = TICKETS_SERVER_NAME;
+		this.internalOrigin = CPA_SERVER_NAME;
 
 		// Issue warning of the internal origin is null.
 		if (this.internalOrigin == null)
@@ -297,7 +297,7 @@ public class UserContext implements Serializable {
 		this.refererURL = refererURL;
 
 		// Replace original origin/server with this requests origin/server. This will help with debugging (i.e., translating a sunappX error back to the sunwebX for this request). */
-		this.internalOrigin = TICKETS_SERVER_NAME;
+		this.internalOrigin = CPA_SERVER_NAME;
 	}
 
 	/**

@@ -16,5 +16,7 @@
 	<body class="signup">
 	  <div class="header">
 		<a href="/"><img src="http://54.69.215.212/images/CPA_Logo.png" alt="logo"></a>
-		<a href="javascript:void(0)" class="button_green" id="signup">Join the Project Academy</a>
+		<c:if test="${empty usertoken) > 0}">
+			<a href="javascript:void(0)" class="button_green" id="join_cpa_btn">Join the Project Academy</a>
+		</c:if>
 	  </div>

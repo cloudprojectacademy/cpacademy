@@ -65,7 +65,12 @@ public class AppContextInterceptor extends HandlerInterceptorAdapter {
 			logger.debug("postHandle.Determining the UserContext and setting to AppContext by the PVO Interceptor" + AppContextHolder.getUserContext().getId());
 
 		// Build the CPA Token and save it to to the View
+		logger.info("postHandle. Trying to build the user token");
 		CPAUtil.buildUserToken(request, mv);
+		
+		// Build the hidden variables and set it to the request so that we can output in the JSP.
+		logger.info("postHandle. Trying to set the cpa fields");
+		CPAUtil.setCPAFields(request, mv);
 
 	}
 

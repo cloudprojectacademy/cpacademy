@@ -3,14 +3,19 @@ package com.cpacademy.core.cpa.common;
 import java.io.Serializable;
 import java.util.HashMap;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.cpacademy.core.cpa.context.AppContextHolder;
 import com.cpacademy.core.cpa.exception.CPAException;
 import com.cpacademy.core.cpa.util.CPATokenCipher;
 import com.cpacademy.core.cpa.util.StringUtil;
 
 public class UserToken implements Serializable {
+	
+	private static Logger logger = LoggerFactory.getLogger(UserToken.class);
 
-	private static final String STATIC_KEY_COMPONENT = "cpaHSK981928KJalsjd9000";
+	private static final String STATIC_KEY_COMPONENT = "cpaHSK98lsjd9000";
 	private static final int MAX_SAFE_CIPHER_KEY_LENGTH = 55;
 	
 	private static final String DELIMITER = "::";
@@ -69,9 +74,8 @@ public class UserToken implements Serializable {
 
 			String sKey = getEncryptionKey();
 			token = CPATokenCipher.rawEncrypt(sKey, token);
-			
 		} catch (Throwable e) {
-			//logger.error("AdminToken.getToToken encountered an issue while encrypting the admin token data." + e);
+			logger.error("CPAToken.getToToken encountered an issue while encrypting the admin token data." + e);
 		}
 		return token;
 	}	
