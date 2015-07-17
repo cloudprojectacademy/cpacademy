@@ -1,5 +1,7 @@
 <%@ page session="false" %>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 	<div class="myaccount-form-wrap">
 	    <div class="headertext-label">Create Account</div>
 		<ul>

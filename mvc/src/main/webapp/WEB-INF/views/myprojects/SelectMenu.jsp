@@ -1,11 +1,13 @@
 <%@ page session="false" %>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <jsp:include page="Header.jsp" flush="true"/>
 
 <form id="cpaform" name="cpaform" action="" method="post">
 ${cpafields}
 <div class="col30">
-    <c:if test="${!empty usertoken) > 0}">   
+    <c:if test="${!empty usertoken}">   
     <div class="myaccountbutton">
       <h3 class="buttontext">My Account</h3>
     </div>
